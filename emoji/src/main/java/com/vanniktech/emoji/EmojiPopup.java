@@ -176,7 +176,7 @@ public final class EmojiPopup implements EmojiResultReceiver.Receiver {
                 internalOnEmojiClickListener, internalOnEmojiLongClickListener, builder);
 
         emojiView.setOnEmojiBackspaceClickListener(internalOnEmojiBackspaceClickListener);
-        emojiView.setOnCustomViewListener(onCustomViewListener);
+        emojiView.setOnCustomViewListener(builder.onCustomViewListener);
 
         popupWindow.setContentView(emojiView);
         popupWindow.setInputMethodMode(PopupWindow.INPUT_METHOD_NOT_NEEDED);
@@ -556,7 +556,6 @@ public final class EmojiPopup implements EmojiResultReceiver.Receiver {
             emojiPopup.onEmojiPopupDismissListener = onEmojiPopupDismissListener;
             emojiPopup.onEmojiBackspaceClickListener = onEmojiBackspaceClickListener;
             emojiPopup.popupWindowHeight = Math.max(popupWindowHeight, 0);
-            emojiPopup.onCustomViewListener = onCustomViewListener;
             return emojiPopup;
         }
     }
