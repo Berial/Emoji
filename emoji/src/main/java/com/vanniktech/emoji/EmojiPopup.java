@@ -538,7 +538,7 @@ public final class EmojiPopup implements EmojiResultReceiver.Receiver {
         }
 
         @CheckResult
-        public Builder setCustomContentView(EmojiView.OnCustomViewListener listener) {
+        public Builder setCustomContentViewListener(EmojiView.OnCustomViewListener listener) {
             onCustomViewListener = listener;
             return this;
         }

@@ -192,7 +192,7 @@ public final class EmojiView extends LinearLayout implements ViewPager.OnPageCha
         }
     }
 
-    interface OnCustomViewListener {
-        public void onCustomView(View v);
+    public interface OnCustomViewListener {
+        void onCustomView(View v);
     }
 }
