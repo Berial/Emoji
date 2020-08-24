@@ -93,8 +93,6 @@ public final class EmojiPopup implements EmojiResultReceiver.Receiver {
     @Nullable
     OnEmojiPopupDismissListener onEmojiPopupDismissListener;
 
-    EmojiView.OnCustomViewListener onCustomViewListener;
-
     int popupWindowHeight;
     int originalImeOptions = -1;
 
@@ -176,7 +174,6 @@ public final class EmojiPopup implements EmojiResultReceiver.Receiver {
                 internalOnEmojiClickListener, internalOnEmojiLongClickListener, builder);
 
         emojiView.setOnEmojiBackspaceClickListener(internalOnEmojiBackspaceClickListener);
-        emojiView.setOnCustomViewListener(builder.onCustomViewListener);
 
         popupWindow.setContentView(emojiView);
         popupWindow.setInputMethodMode(PopupWindow.INPUT_METHOD_NOT_NEEDED);

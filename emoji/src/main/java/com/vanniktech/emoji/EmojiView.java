@@ -59,8 +59,6 @@ public final class EmojiView extends LinearLayout implements ViewPager.OnPageCha
     @Nullable
     OnEmojiBackspaceClickListener onEmojiBackspaceClickListener;
 
-    OnCustomViewListener onCustomViewListener;
-
     private int emojiTabLastSelectedIndex = -1;
 
     @SuppressWarnings("PMD.CyclomaticComplexity")
@@ -71,8 +69,8 @@ public final class EmojiView extends LinearLayout implements ViewPager.OnPageCha
 
         View.inflate(context, R.layout.emoji_view, this);
 
-        if (onCustomViewListener != null) {
-            onCustomViewListener.onCustomView(this);
+        if (builder.onCustomViewListener != null) {
+            builder.onCustomViewListener.onCustomView(this);
         }
 
         setOrientation(VERTICAL);
@@ -126,10 +124,6 @@ public final class EmojiView extends LinearLayout implements ViewPager.OnPageCha
                 }
             }
         }));
-    }
-
-    public void setOnCustomViewListener(OnCustomViewListener listener) {
-        onCustomViewListener = listener;
     }
 
     public void setOnEmojiBackspaceClickListener(@Nullable final OnEmojiBackspaceClickListener onEmojiBackspaceClickListener) {
